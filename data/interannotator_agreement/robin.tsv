@@ -1,0 +1,51 @@
+Filename	Reviewer1	Reviewer2	Suggestions
+447fd412.png	0	1	Could mention that the red anchor objects are in contact with blue objects would to be more clear, otherwise there could be confusion as to what objects positions refer to.
+44d8ac46.png	1	1	
+44f52bb0.png	1	1	
+4522001f.png	1	1	
+46442a0e.png	1	1	
+469497ad.png	0	0	Should be scaled to the number of distinct non-black colors of the whole image, not just the boarder.
+46f33fce.png	1	1	
+47c1f68c.png	1	1	
+484b58aa.png	1	1	
+48d8fb45.png	1	1	
+4938f0c2.png	0	1	Since the 'point' to be revoled around is a 2x2 square of pixels, to be more precise the wording could be changed from 'around a central pixel' to 'the center point of the 2x2 square', same applies when instructing the borizontal and vertical flip to be around that point as well.
+496994bd.png	1	1	
+49d1d64f.png	1	1	
+4be741c5.png	1	1	
+4c4377d9.png	1	1	
+4c5c2cf0.png	1	1	
+508bd3b6.png	1	1	
+50cb2852.png	1	1	
+5117e062.png	1	1	
+5168d44c.png	1	1	
+539a4f51.png	1	1	
+543a7ed5.png	1	1	
+54d82841.png	1	1	
+54d9e175.png	1	1	
+5521c0d9.png	1	0	
+5582e5ca.png	1	1	
+5614dbcf.png	0	1	Did not explicitly mention that the 'appropriate' color used for filling is the most common one (or disregarding the grey ones)
+56dc2b01.png	1	1	
+56ff96f3.png	1	1	
+57aa92db.png	1	0	
+5ad4f10b.png	1	1	
+5bd6f4ac.png	1	1	
+5c0a986e.png	1	1	
+5c2c9af4.png	1	1	
+5daaa586.png	1	1	
+60b61512.png	1	1	
+6150a2bd.png	1	1	
+623ea044.png	1	1	
+62c24649.png	1	1	
+63613498.png	1	1	
+6430c8c4.png	1	1	
+6455b5f5.png	1	0	
+67385a82.png	1	1	
+673ef223.png	1	1	
+6773b310.png	1	0	
+67a3c6ac.png	1	1	
+67a423a3.png	1	1	
+67e8384a.png	1	1	
+681b3aeb.png	1	1	
+68b16354.png	1	1	

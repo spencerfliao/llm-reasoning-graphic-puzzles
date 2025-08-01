@@ -1,0 +1,51 @@
+Filename	Robin	Prakul	Suggestions
+05269061.png	0	0	Use fill_between_coord to draw the diagonal lines. Defining another custom function might be difficult?
+05f2a901.png	0	0	fill_rect only draws a rect not an object
+08ed6ac7.png	1	1	
+0a938d79.png	1	1	
+0b148d64.png	1	1	
+0ca9ddb6.png	1	1	skin color -> orange
+0d3d703e.png	0	0	Program description should describe a single program, not separates for train and test
+178fcbfb.png	1	1	fill_col 'red' might be misleading, it takes number value not str
+1a07d186.png	0	0	fill_between_coords is the wrong fn
+1bfc4729.png	1	1	
+1caeab9d.png	1	1	
+1cf80156.png	1	1	tight fit would be the better solution
+1e0a9b12.png	1	1	
+1f0c79e5.png	1	1	
+1f876c06.png	1	1	
+1fad071e.png	1	1	
+2204b7a8.png	1	1	
+22168020.png	1	1	
+22eb0ac0.png	1	1	
+23581191.png	1	1	
+23b5c85d.png	1	1	
+253bf280.png	1	1	
+25d8a9c8.png	1	1	
+25ff71a9.png	1	1	
+29c11459.png	1	1	
+2bcee788.png	0	1	Use flip not rotate
+2c608aff.png	1	1	
+2dc579da.png	1	1	
+2dee498d.png	1	1	
+321b1fc6.png	0	0	change_object_color sets a single color for the entire object. We have multiple color
+32597951.png	1	1	
+3428a4f5.png	0	0	Its an 'OR' relationship of red pixels, not 'AND'
+3618c87e.png	1	1	
+363442ee.png	0	0	replace should be used instead of combine_object
+3906de3d.png	0	0	move_object does not exist
+39a8645d.png	1	1	
+3aa6fb7a.png	1	1	
+3ac3eb23.png	0	1	use fill_value not fill_rect
+3af2c5a8.png	1	1	
+3bd67248.png	0	0	There is only a single line in the input
+3bdb4ada.png	1	1	
+3c9b0459.png	1	1	
+3de23699.png	1	1	
+3eda0437.png	0	0	use fill_rect not change_object_color. We dont have the rect object
+40853293.png	1	1	
+4093f84a.png	0	0	use fill_value not fill_betwen_coords
+41e4d17e.png	1	1	
+4258a5f9.png	0	0	Fill_rect will overwrite the grey pixel.
+4347f46a.png	1	1	Kinda convoluted? Can just fill the interior with black.
+445eab21.png	1	1	Better use empty_grid in the instructions
