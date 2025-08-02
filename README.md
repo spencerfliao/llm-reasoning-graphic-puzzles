@@ -3,12 +3,25 @@
 
 ## Corpus + explanation
 ### Overview
-Our corpus consists of two components. The first is the ARC dataset originally introduced by François Chollet and published on Kaggle. The dataset consists of 400 training examples, 400 evaluation examples and 100 testing examples. Each example is a distinct reasoning problem where the task is to go from a given input to an output. Each example consists of three training pairs of inputs and outputs that illustrate the logic or pattern to be identified and applied to solve the test pair. This portion of the corpus was already present on Kaggle, and we just had to convert it into a more human-readable format for the next part, i.e. we had to convert the original JSON files into images. 
 
+#### Motivation
+
+Large language models (LLMs) struggle with tasks that require abstract, few-shot reasoning—especially in visual domains. The Abstraction and Reasoning Corpus (ARC) provides a benchmark for such tasks, mimicking the kind of generalization humans excel at but machines often fail to replicate.
 <img width="976" height="856" alt="Screenshot 2025-07-31 at 18 18 59" src="https://github.com/user-attachments/assets/6b4e98ff-c85f-4f7e-b0db-f17adbb556f9" />
 
-The next component is the human-annotated explanations for each ARC reasoning problem. Our team is working through each problem, creating detailed explanations that break down the logic or pattern identified in the training pairs and how it applies to the test pair. These annotations aim to articulate the step-by-step thought process a human might use to solve these complex abstract reasoning. This component is one of the main contributions of our project. By the end of week three, we hope to have annotated about 200 examples and then use an LLM like GPT4 to annotate the remaining 600 examples. From there, once we have reviewed the annotations done by the LLM, we plan to fine-tune an LLM like LLaVA on the ARC dataset and the corresponding annotations to see if it can successfully solve the reasoning problems of the test set.
+#### Our Approach
 
+We augment the ARC dataset with structured natural language annotations that describe the underlying logic of each task. Each annotation includes reflections, pixel/object transformations, helper functions, and program instructions. To support this, we convert ARC JSON files into images for easier interpretation and annotation.
+
+#### Quality Assurance
+
+To maintain consistency, we conducted an inter-annotator agreement study with a binary correctness evaluation, reaching an agreement score of **85%** across annotators.
+
+#### Interface and Applications
+
+We also built a searchable interface to explore tasks by reasoning patterns or helper functions. The resulting annotated corpus will be used to fine-tune an LLM capable of solving and explaining ARC tasks autonomously.
+
+---
 
 ### Sources
 1. ARC Challenge Dataset Source: [Kaggle ARC Challenge Dataset](https://www.kaggle.com/c/abstraction-and-reasoning-challenge/overview) (Original source of ARC challenge problems)
@@ -131,14 +144,11 @@ We experimented different forms of annotation during milestone2. Originally our 
 ### Implementation
 
    - **User Interface:** A simple text box will enable users to enter their search terms, with a toggle indicating whether the user wants to search by either options. Results that include the original task image and annotations would be displayed in the order of relevance. (Optional filters, e.g., difficulty level, if we deem it necessary and have the time to develop, could refine searches, enhancing discoverability of relevant tasks.)
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 23" src="https://github.com/user-attachments/assets/527e888e-3122-494b-aa69-ddf26165721b" />
+<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 26" src="https://github.com/user-attachments/assets/3b64e0fe-07d8-4ac7-9ba5-b89176c809ba" />
 
 ### Justification of Choices
 
 Our choice to focus on reflection and helper functions for the annotated search functionality comes from the desire to showcase the depth of human understanding and computational strategies required to solve ARC tasks. "Reflections" give a quick, abstract insight into the problem-solving required, appealing to users interested in the cognitive aspects of the dataset. In contrast, helper functions cater to those more interested in the programming challenge, providing a bridge between abstract reasoning and practical coding exercises.
-
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 26" src="https://github.com/user-attachments/assets/3b64e0fe-07d8-4ac7-9ba5-b89176c809ba" />
-
 
 
 ## References
