@@ -93,9 +93,7 @@ The `data` directory contains the following subdirectories:
 3. `images`: Images regenerated from the .json files in the `original` folder, that we use for writing the human annotations.
 4. `annotations`: Annotations for the images in the form of .tsv files.
 
-# COLX 523 - Advanced Corpus Linguistics
-
-# Milestone 3                   
+     
 
 ## Annotation + explanation + code
 
