@@ -4,13 +4,11 @@
 ## Corpus + explanation
 ### Overview
 Our corpus consists of two components. The first is the ARC dataset originally introduced by François Chollet and published on Kaggle. The dataset consists of 400 training examples, 400 evaluation examples and 100 testing examples. Each example is a distinct reasoning problem where the task is to go from a given input to an output. Each example consists of three training pairs of inputs and outputs that illustrate the logic or pattern to be identified and applied to solve the test pair. This portion of the corpus was already present on Kaggle, and we just had to convert it into a more human-readable format for the next part, i.e. we had to convert the original JSON files into images. 
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 18 54" src="https://github.com/user-attachments/assets/417584b2-1d73-4541-a890-074413e36763" />
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 18 59" src="https://github.com/user-attachments/assets/63fcf23a-0c73-4087-b40c-1d31b60641b3" />
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 02" src="https://github.com/user-attachments/assets/cf12e612-ff62-40a6-bfa9-6127c3e729e8" />
+
+<img width="976" height="856" alt="Screenshot 2025-07-31 at 18 18 59" src="https://github.com/user-attachments/assets/6b4e98ff-c85f-4f7e-b0db-f17adbb556f9" />
 
 The next component is the human-annotated explanations for each ARC reasoning problem. Our team is working through each problem, creating detailed explanations that break down the logic or pattern identified in the training pairs and how it applies to the test pair. These annotations aim to articulate the step-by-step thought process a human might use to solve these complex abstract reasoning. This component is one of the main contributions of our project. By the end of week three, we hope to have annotated about 200 examples and then use an LLM like GPT4 to annotate the remaining 600 examples. From there, once we have reviewed the annotations done by the LLM, we plan to fine-tune an LLM like LLaVA on the ARC dataset and the corresponding annotations to see if it can successfully solve the reasoning problems of the test set.
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 04" src="https://github.com/user-attachments/assets/f44099b3-35b2-42c9-9217-ecb3c339442c" />
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 05" src="https://github.com/user-attachments/assets/a721b6c7-4965-48ca-b556-7e4dfabb7095" />
+
 
 ### Sources
 1. ARC Challenge Dataset Source: [Kaggle ARC Challenge Dataset](https://www.kaggle.com/c/abstraction-and-reasoning-challenge/overview) (Original source of ARC challenge problems)
@@ -42,8 +40,6 @@ The code utilizes several libraries such as json, os, shutil, numpy, pandas, PIL
    2. Generate and combine images based on the data.
    3. Extract metadata from the data.
 4. Save the metadata for training and evaluation datasets as CSV files in the specified output directory.
-
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 07" src="https://github.com/user-attachments/assets/7fd2837f-6c7d-4453-a9c3-a45eeaff79c0" />
 
 
 ## Annotation plan
@@ -80,7 +76,8 @@ rubric={reasoning:2,writing:1,raw:1}
 Annotation guidelines for a task are provided in the form of various sections of instructions, and we will be annotating the sections ourselves.
 Some examples of data processed into visually appropriate format and their annotations are shown below: <br>
 Example:
-<img width="1680" height="940" alt="Screenshot 2025-07-31 at 18 19 20" src="https://github.com/user-attachments/assets/ea7a51d1-abda-4bfc-b89f-82317943aea5" />
+
+<img width="1503" height="768" alt="Screenshot 2025-07-31 at 18 19 20" src="https://github.com/user-attachments/assets/8bfa716e-15b1-4d53-8f42-9145b11f84ae" />
 
 
 ## Data
