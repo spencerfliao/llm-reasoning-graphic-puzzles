@@ -90,9 +90,6 @@ We conducted two phases of pilot studies, annotating 14 samples in total. Initia
 
 Annotation guidelines for a task are provided in the form of various sections of instructions, and we will be annotating the sections ourselves.
 Some examples of data processed into visually appropriate format and their annotations are shown below: <br>
-Example:
-
-<img width="1503" height="768" alt="Screenshot 2025-07-31 at 18 19 20" src="https://github.com/user-attachments/assets/8bfa716e-15b1-4d53-8f42-9145b11f84ae" />
 
 #### Data
 The `data` directory contains the following subdirectories:
@@ -101,7 +98,7 @@ The `data` directory contains the following subdirectories:
 3. `images`: Images regenerated from the .json files in the `original` folder, that we use for writing the human annotations.
 4. `annotations`: Annotations for the images in the form of .tsv files.
 
-#### Explanation
+#### Example
 
 The original ARC dataset is stored in JSON format and designed to be compatible with various machine-learning tools. It is divided into three folders: training, evaluation and test. Each contains multiple JSON files representing distinct reasoning problems, including inputs and outputs designed to test abstract reasoning abilities. To make the annotation task more accessible, we converted the JSON files to PNG images. The code for that is present in the `src/utils.py` file. The images, on the other hand, are located in the `data/images` directory. To prevent any data leakage problems, we only converted the training and evaluation  JSON files to images since these are the only files we will be annotating. This aligns with our overall goal: to fine-tune an LLM to automatically generate the annotations for the test set and then use them to solve the ARC reasoning tasks. 
 Out of the 800 examples (400 training and 400 evaluation), we took 200 and annotated 50. Each annotation consisted of four components: reflections, pixel/object changes, helper functions, and program instructions.
@@ -109,6 +106,8 @@ Out of the 800 examples (400 training and 400 evaluation), we took 200 and annot
 2. Pixel/Object Changes: Here, we detail the specific alterations made to the objects or pixels within the grid. This includes identifying relevant objects or groups of pixels and describing the changes they undergo, such as movements, colour changes, expansions, or contractions, to achieve the desired output.
 3. Helper Functions: We list the predefined helper functions used in the solution. These functions perform object detection, colour replacement, grid manipulation, object merging, and so on. These functions serve as building blocks for constructing the step-by-step solution for the reasoning task.
 4. Program Instructions: This section provides a sequential guide for executing the solution using the previously mentioned helper functions. It is a detailed algorithm that, when followed, would lead from the input grid to the output grid.
+
+<img width="1503" height="768" alt="Screenshot 2025-07-31 at 18 19 20" src="https://github.com/user-attachments/assets/8bfa716e-15b1-4d53-8f42-9145b11f84ae" />
 
 We decided to store the annotations as TSV files. They are located in the `data/annotations` directory.
 These annotations will fine-tune an LLM using Chain of Thought Prompting and Thought Cloning. The goal is that for the test set, it can generate its annotations and use them to solve each reasoning task. 
