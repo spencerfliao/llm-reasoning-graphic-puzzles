@@ -2,6 +2,7 @@
                
 
 ## Corpus + explanation
+
 ### Overview
 
 #### Motivation
@@ -30,7 +31,8 @@ We also built a searchable interface to explore tasks by reasoning patterns or h
 ### Corpus Format
 The original ARC dataset is stored in JSON format, designed for compatibility with various machine-learning tools. It is divided into three folders: training, evaluation and test. Each contains multiple JSON files representing distinct reasoning problems, including inputs and outputs designed to test abstract reasoning abilities. The training and evaluation examples also have images corresponding to each JSON file. Each image is a visual representation of a reasoning problem. The human annotations are still a work in progress, so the final storage format and database structure will be determined based on the scalability needs and the ease of access for both machine learning models and researchers. For now we are storing them in TSV files.
 
-## Corpus collection code
+## Corpus collection
+
 ### Overview
 The code is used to convert JSON files into PNG files, which, along with the human annotations, form a part of the corpus. It processes the training and evaluation data, generates images based on this data, combines these images with specific configurations, and saves the resulting images along with metadata about the data. The format conversion is necessary to provide a visual aid for manually writing the annotations. The code can be found in a Python file named utils.py, located inside the src directory at the root level.
 
@@ -55,7 +57,8 @@ The code utilizes several libraries such as json, os, shutil, numpy, pandas, PIL
 4. Save the metadata for training and evaluation datasets as CSV files in the specified output directory.
 
 
-## Annotation plan
+## Annotation
+
 ### Description of Annotations
 We provide a high-level overview of our annotation process, focusing on human natural language descriptions for each ARC task. Specifically, we generate six sentence-level annotations for each task: Reflection, Pixel Changes, Object Changes, Helper Functions, Overall Pattern, and Program Instructions. Here's a breakdown of each section:
 
@@ -83,8 +86,7 @@ Pilot studies have been conducted on a few annotations, guiding our annotation a
 ### Pilot Study Report
 We conducted two phases of pilot studies, annotating 14 samples in total. Initially, we focused solely on reflections, but subsequent discussions highlighted issues like data alignment and color representation. In the second trial, we annotated all specified sections, streamlined the process with Google Sheets and image conversion scripts, and refined our annotation style to better suit our goals.
 
-## Annotation materials
-rubric={reasoning:2,writing:1,raw:1}
+### Annotating the materials
 
 Annotation guidelines for a task are provided in the form of various sections of instructions, and we will be annotating the sections ourselves.
 Some examples of data processed into visually appropriate format and their annotations are shown below: <br>
@@ -92,17 +94,14 @@ Example:
 
 <img width="1503" height="768" alt="Screenshot 2025-07-31 at 18 19 20" src="https://github.com/user-attachments/assets/8bfa716e-15b1-4d53-8f42-9145b11f84ae" />
 
-
-## Data
+#### Data
 The `data` directory contains the following subdirectories:
 1. `references`: Partial dataset comprising of gpt4 and human annotations that is used as a basis to form the corpus.
 2. `original`: Original Kaggle dataset comprising of images in the form of .json files, that we use to form our main corpus containing images and the annotations.
 3. `images`: Images regenerated from the .json files in the `original` folder, that we use for writing the human annotations.
 4. `annotations`: Annotations for the images in the form of .tsv files.
 
-     
-
-## Annotation + explanation + code
+#### Explanation
 
 The original ARC dataset is stored in JSON format and designed to be compatible with various machine-learning tools. It is divided into three folders: training, evaluation and test. Each contains multiple JSON files representing distinct reasoning problems, including inputs and outputs designed to test abstract reasoning abilities. To make the annotation task more accessible, we converted the JSON files to PNG images. The code for that is present in the `src/utils.py` file. The images, on the other hand, are located in the `data/images` directory. To prevent any data leakage problems, we only converted the training and evaluation  JSON files to images since these are the only files we will be annotating. This aligns with our overall goal: to fine-tune an LLM to automatically generate the annotations for the test set and then use them to solve the ARC reasoning tasks. 
 Out of the 800 examples (400 training and 400 evaluation), we took 200 and annotated 50. Each annotation consisted of four components: reflections, pixel/object changes, helper functions, and program instructions.
@@ -130,7 +129,7 @@ Using the script at `/src/inter_annotator_agreement.py`, we obtained a score of 
 85% is fairly reasonable as our data annotation involves mentally demanding logical deductions in writing appropriate psuedocode using predefined functions. Some details in the thought process might be missed, or the usage of predefined functions might introduce bugs.
 
 
-## Experimenting with annotation options (Optional)
+## Experimenting with annotation options
 
 We experimented different forms of annotation during milestone2. Originally our annotation contain the fields `Filename`, `Reflections`, `Pixel Changes`, `Object Changes`, `Helper Functions`, `Overall Pattern` and `Program Instructions`. However during our initial annotations, as seen at `/data/annotations/archived`,  we discovered some of the fields are redundant or unclear in purpose. For example, `Reflections` and `Overall Pattern` are quite similar. They differ in detailness but the difference is not important in downstream tasks. Therefore we choosed to merge them together. We also merged `Pixel Changes` and `Objects Changes` to `Pixel/Object Changes` because most tasks is best described by either one of them. 
 
