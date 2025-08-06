@@ -5,6 +5,12 @@
 
 ### Overview
 
+[View Presentation Slides](https://github.com/spencerfliao/llm-reasoning-graphic-puzzles/blob/ed60cff9f7180a37906a4e79e1a0af96ca977586/Slide%20Deck.pdf)
+
+[View Presentation Video](https://drive.google.com/file/d/1A67JKig9ujmueDwPy8qMMmdqBzqMdZ4s/view?usp=share_link)
+
+
+
 #### Motivation
 
 Large language models (LLMs) struggle with tasks that require abstract, few-shot reasoning—especially in visual domains. The Abstraction and Reasoning Corpus (ARC) provides a benchmark for such tasks, mimicking the kind of generalization humans excel at but machines often fail to replicate.
